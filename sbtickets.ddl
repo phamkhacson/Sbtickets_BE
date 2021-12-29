@@ -1,0 +1,11 @@
+CREATE TABLE Bus (id int(10) NOT NULL AUTO_INCREMENT, car_number int(10) NOT NULL, color varchar(255), manufacturer varchar(255), life_car varchar(255), number_seats int(10) NOT NULL, year_use int(10) NOT NULL, date_mantain date, PRIMARY KEY (id));
+CREATE TABLE TripBus (id int(10) NOT NULL AUTO_INCREMENT, salary_id int(10) NOT NULL, bus_id int(10) NOT NULL, linebus_id id int(10) NOT NULL,  number_guest int(10) NOT NULL, price_trip int(10) NOT NULL, time_trip date, PRIMARY KEY (id));
+CREATE TABLE LineBus (id int(10) NOT NULL AUTO_INCREMENT, first_point varchar(255), last_point varchar(255), length int(10) NOT NULL, complexity int(10) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE Driver (id int(10) NOT NULL AUTO_INCREMENT, cmt varchar(255), driver_name varchÉar(255), code_license varchar(255), type_license varchar(255), address varchar(255), dob date, senority int(10) NOT NULL, image varchar(255), PRIMARY KEY (id));
+CREATE TABLE Salary (id int(10) NOT NULL AUTO_INCREMENT, dateTime date, coefficient int(10) NOT NULL, PRIMARY KEY (Id));
+CREATE TABLE TripBus_Driver (tripbus_id int(10) NOT NULL, driver_id int(10) NOT NULL, PRIMARY KEY (tripbus_id , driver_id));
+ALTER TABLE TripBus ADD CONSTRAINT FKTripBus615566 FOREIGN KEY (bus_id) REFERENCES Bus (id);
+ALTER TABLE TripBus ADD CONSTRAINT FKTripBus615566 FOREIGN KEY salary_id REFERENCES Salary (id);
+ALTER TABLE TripBus ADD CONSTRAINT FKTripBus615566 FOREIGN KEY linebus_id REFERENCES LineBus (id);
+ALTER TABLE TripBus_Driver ADD CONSTRAINT FKTripBus_Dr775157 FOREIGN KEY (tripbus_id) REFERENCES TripBus (id);
+ALTER TABLE TripBus_Driver ADD CONSTRAINT FKTripBus_Dr704980 FOREIGN KEY (driver_id) REFERENCES Driver (id);
